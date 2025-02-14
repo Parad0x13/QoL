@@ -69,7 +69,7 @@ default_functions.Push(["(r)eload/mode selection", "Forces a reload/mode selecti
 modes := ["Default", "SomethingElse"]
 mode_current := modes[1]
 mode_selection() {
-	myGui := Gui()
+	;myGui := Gui()
 
 	msg := "QoL Script " version " Mode Selection (Current mode: " mode_current ")`n"
 	msg := msg "`nctrl+alt+"
@@ -77,15 +77,20 @@ mode_selection() {
 		msg := msg "`n" function[1] ": " function[2]
 	}
 	msg := msg "`n"
-	text := myGui.Add("Text",, msg)
+	;text := myGui.Add("Text",, msg)
 
-	mode := MyGUI.Add("DDL", "vcbx w200 Choose1", modes)
-	mode.OnEvent("Change", selectMode)
+	;mode := MyGUI.Add("DDL", "vcbx w200 Choose1", modes)
+	;mode.OnEvent("Change", selectMode)
 
-	btn := myGui.Add("Button", "Default w80", "OK")
-	btn.OnEvent("Click", setMode)
+	;btn := myGui.Add("Button", "Default w80", "OK")
+	;btn.OnEvent("Click", setMode)
 
-	myGui.Show()
+	;myGui.Show()
+
+	; [BUG] Stopgap for now because the mode system does not work properly
+	; [BUG] e.g. use the autoclicker functionality and you'll see everything breaks
+	MsgBox msg
+	Reload
 }
 ^!R::mode_selection()
 
