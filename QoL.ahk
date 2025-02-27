@@ -111,3 +111,9 @@ setMode(obj, *) {
 }
 
 ; [NOTE] waitUntilImageFound(image_loc, times) exists in QoL v1.x and may be reimplemented here later
+
+;palworld_autorun() {
+;	Send "{w Down}"
+;	Send "{shift Down}"
+;}
+;XButton1::palworld_autorun()
